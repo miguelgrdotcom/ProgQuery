@@ -90,12 +90,12 @@ public class GetStructuresAfterAnalyze implements TaskListener {
 				// System.out.println("TYPE_DECS_IN_CU:\t" +
 				// cuTree.getTypeDecls().size());
 //				System.out.println("BEFORE SCAN");
-				if (cuTree.getTypeDecls().size() > 0)
+				if (cuTree.getTypeDecls().size() > 0 && cuTree.getTypeDecls().size() < counter)
 					firstScan(cuTree, (ClassTree) cuTree.getTypeDecls().get(counter++));
 				else
 					firstScanIfNoTypeDecls(cuTree);
 //				System.out.println("AFTER SCAN");
-			} else if (cuTree.getTypeDecls().size() > 0)
+			} else if (cuTree.getTypeDecls().size() > 0 && cuTree.getTypeDecls().size() < counter)
 				scan((ClassTree) cuTree.getTypeDecls().get(counter++), false);
 
 			if (classCounter.get(cuTree.getSourceFile()) <= 0) {
