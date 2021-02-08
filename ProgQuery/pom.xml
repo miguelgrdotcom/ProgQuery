@@ -62,15 +62,21 @@
 		    <version>4.8.1</version>		    
 		</dependency>							
   </dependencies> 
-<build>
-  <plugins>  
-   	<plugin>
+  <build>
+	<plugins>
+		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-jar-plugin</artifactId>			
+			<artifactId>maven-jar-plugin</artifactId>				
 			<configuration>
-				<skipIfEmpty>true</skipIfEmpty>
-			</configuration>
+                <archive>
+                    <manifest>
+                        <addClasspath>true</addClasspath>
+                        <classpathPrefix>lib/</classpathPrefix>
+                        <mainClass>ProgQueryPlugin</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>			
 		</plugin>
-  </plugins>  
-  </build>
+	</plugins>
+	</build>
 </project>

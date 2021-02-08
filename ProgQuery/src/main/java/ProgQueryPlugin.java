@@ -48,5 +48,12 @@ public class ProgQueryPlugin implements com.sun.source.util.Plugin {
 	public String getName() {
 		return PLUGIN_NAME;
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	
 
 }
